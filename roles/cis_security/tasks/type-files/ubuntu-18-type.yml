@@ -1584,6 +1584,7 @@
         - { find: "^max_log_file\\s+=\\s+[^{{ auditd_max_log_file_size }}]", replace: "max_log_file = {{ auditd_max_log_file_size }}" } # 4.1.2.1
         - { find: "^num_logs\\s+=\\s+[^{{ auditd_num_logs }}]", replace: "max_log_file = {{ auditd_num_logs }}" } # 4.1.2.1
         - { find: "^max_log_file_action\\s+=\\s+((?!{{ auditd_max_log_file_action }}).)*$", replace: "max_log_file_action = {{ auditd_max_log_file_action }}" } # 4.1.2.2
+        - { find: "^space_left\\s+=\\s+((?!{{ auditd_space_left_disk_size }}).)*$", replace: "space_left = {{ auditd_space_left_disk_size }}" } # 4.1.2.2
         - { find: "^space_left_action\\s+=\\s+((?!{{ auditd_space_left_action }}).)*$", replace: "space_left_action = {{ auditd_space_left_action }}" } # 4.1.2.2
         - { find: "^action_mail_acct\\s+=\\s+((?!{{ auditd_action_mail_acct }}).)*$", replace: "action_mail_acct = {{ auditd_action_mail_acct }}" } # 4.1.2.2
         - { find: "^admin_space_left\\s+=\\s+((?!{{ auditd_admin_left_disk_size }}).)*$", replace: "admin_space_left = {{ auditd_admin_left_disk_size }}"} # 4.1.2.2
