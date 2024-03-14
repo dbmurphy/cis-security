@@ -1547,6 +1547,22 @@
         name: "iptables-services"
         state: absent
 
+    - name: Open port 3022/tcp for teleport on firewalld
+      ansible.posix.firewalld:
+        port: 3022/tcp
+        permanent: true
+        state: enabled
+        immediate: true
+        zone: public
+
+    - name: Open port 3306/tcp for mysql on firewalld
+      ansible.posix.firewalld:
+        port: 3306/tcp
+        permanent: true
+        state: enabled
+        immediate: true
+        zone: public
+
     - name: 3.6.1 - Set default zone
       ansible.builtin.lineinfile:
         path: "/etc/firewalld/firewalld.conf"
